@@ -1,5 +1,6 @@
 var tokenize = require('../lib/tokenizer.js');
-var T = require('../lib/types.js').TokenType;
+var Token = require('../lib/types.js').Token;
+var T = Token.Type;
 
 function random_string(max) {
     max = max || 1000;
