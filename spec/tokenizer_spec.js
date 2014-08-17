@@ -137,4 +137,16 @@ describe('tokenizer', function () {
         expect_tokens_match(output, expected);
     });
 
+    it('should tokenize mac alt+space char as withespace', function() {
+        var input = 'a' + String.fromCharCode(0xa0) + 'b';
+        
+        var expected = tokens(
+                token(T.SYM, 'a'),
+                token(T.SYM, 'b')
+            );
+
+        var output = tokenize(input);
+
+        expect_tokens_match(output, expected);
+    });
 });
