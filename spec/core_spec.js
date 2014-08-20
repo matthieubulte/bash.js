@@ -65,4 +65,31 @@ describe('core', function() {
 
         expect(output).toEqual(expected);
     });
+
+    it('should run user added commands', function() {
+        var spy = jasmine.createSpy();
+        
+        core.addCommand('test', spy);
+        core.run('test');
+
+        expect(spy).toHaveBeenCalled();
+    });
+
+    it('should call custom command with runtime parameters', function() {
+        var spy = jasmine.createSpy();
+
+        core.addCommand('test', spy);
+        core.run("test 1 2 'test'");
+
+        expect(spy).toHaveBeenCalledWith(1, 2, 'test');
+    });
+
+    it('should call custom command with evaluated arguments', function() {
+        var spy = jasmine.createSpy();
+
+        core.addCommand('test', spy);
+        core.run('test (1 + 1) (id 3 | _ + 1) "str"');
+
+        expect(spy).toHaveBeenCalledWith(2, 4, 'str');
+    });
 });
