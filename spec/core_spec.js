@@ -92,4 +92,24 @@ describe('core', function() {
 
         expect(spy).toHaveBeenCalledWith(2, 4, 'str');
     });
+
+    it('should run user added aliases', function() {
+        var input = 'test';
+        var expected = 3;
+
+        core.addAlias('test', '1 + 2');
+        var output = core.run(input);
+
+        expect(output).toEqual(expected);
+    });
+
+    it('should pass arguments using variables $1, $2, ..., $n', function() {
+        var input = 'test 1 2 3 4 5';
+        var expected = 15;
+
+        core.addAlias('test', '$1 + $2 + $3 + $4 + $5');
+        var output = core.run(input);
+
+        expect(output).toEqual(expected);
+    });
 });
