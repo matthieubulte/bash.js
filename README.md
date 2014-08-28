@@ -140,3 +140,6 @@ argument number, starting at 1.
 	+ 2 functions: `next` and `hasNext`
 	
  
+# License
+
+bash_js is released under the [MIT License](http://www.opensource.org/licenses/MIT).
