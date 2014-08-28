@@ -1,26 +1,15 @@
 bash_js
 =======
 
-hybrid bash-like/js runner
+This piece of javascript code is an attempt to create a hybrid javascript and bash-like code runner. This runner was written to integrate with the mongoshell and provide more powerful command line query mechanisms.
 
-this piece of javascript code is an attempt to create a hybrid javascript and bash-like code runner. This runner 
-was written to integrate with the mongoshell and provide more powerful command line query mechanisms.
+The runner's goal is to have the advantages of the unix shell (pipes, commands, aliases...) combined with the ease of use of javascript.
 
-the runner's goal is to have the advantages of the unix shell (pipes, commands, aliases...) combined with the ease of
-use of javascript.
+## Examples
 
-# Examples
-
----------------------------------------------
-input:
-
+##### Simple JavaScript
 ```
-1 + 1
-```
-
-console output:
-
-```
+> 1 + 1
 2
 ```
 
@@ -28,16 +17,10 @@ this example just show how normal javscript just runs
 as expected.
 
 ---------------------------------------------
-input:
 
+##### Commands
 ```
-id "xyz"
-
-```
-
-console output:
-
-```
+> id "xyz"
 xyz
 ```
 
@@ -45,15 +28,10 @@ here we make use of the built-in `id` command that just
 returns the input parameter (here a simple string)
 
 ---------------------------------------------
-input:
 
+##### Pipes
 ```
-square 2 | _ + 2
-```
-
-console output:
-
-```
+> square 2 | _ + 2
 4
 ```
 
@@ -64,19 +42,10 @@ feed it to the right side under the `_` variable.
 note: here, the square command is a user-defined command
 
 ---------------------------------------------
-input:
-
+##### Mixed Pipes
 ```
-[1, 2, 3, 4] | Math.pow(2, _)
-```
-
-console output:
-
-```
-2
-4
-8
-16
+> [1, 2, 3, 4] | Math.pow(2, _)
+[2, 4, 8, 16]
 ```
 
 when use with array, the pipe operator works as the javscript
@@ -84,15 +53,9 @@ map function. the right side of the expression will then be called
 for every element of the array
 
 ---------------------------------------------
-input:
-
+##### Nested Expressions
 ```
-square (id 4 | Math.sqrt(_)) | repeat "!" _
-```
-
-console output:
-
-```
+> square (id 4 | Math.sqrt(_)) | repeat "!" _
 !!!!
 ```
 
@@ -100,7 +63,7 @@ this example shows how it is possible to nest expressions and pipes
 while still mixing javascript and commands
 
 
-# Usage
+## Usage
 
 Here is how you would use the runner:
 
@@ -133,13 +96,13 @@ core.run("increment 1"); // => 2
 Note: Accessing the alias' arguments is done using $n with n being the
 argument number, starting at 1.
 
-# TODO
+## Todo
 
 + add support for iterator in pipeline to be able to integrate with the mongoshell's dbcursor, iterator can be created from:
 	+ an array
 	+ 2 functions: `next` and `hasNext`
 	
  
-# License
+## License
 
 bash_js is released under the [MIT License](http://www.opensource.org/licenses/MIT).
