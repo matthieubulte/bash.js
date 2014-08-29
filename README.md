@@ -1,4 +1,4 @@
-bash_js
+bash.js
 =======
 
 This piece of javascript code is an attempt to create a hybrid javascript and bash-like code runner. This runner was written to integrate with the mongoshell and provide more powerful command line query mechanisms.
@@ -105,4 +105,4 @@ argument number, starting at 1.
  
 ## License
 
-bash_js is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+bash.js is released under the [MIT License](http://www.opensource.org/licenses/MIT).
