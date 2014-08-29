@@ -1,0 +1,19 @@
+{
+  "name": "bash.js",
+  "version": "0.0.0",
+  "description": "hybrid javascript and bash-like code runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthieubulte/bash_js.git"
+  },
+  "author": "Matthieu Bulté <matthieu.bulte.06@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthieubulte/bash_js/issues"
+  },
+  "homepage": "https://github.com/matthieubulte/bash_js"
+}
