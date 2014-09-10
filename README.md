@@ -1,4 +1,4 @@
-bash.js [![Build Status](https://travis-ci.org/matthieubulte/bash.js.svg?branch=master)](https://travis-ci.org/matthieubulte/bash.js)
+bash.js [![Build Status](https://travis-ci.org/matthieubulte/bash.js.svg?branch=master)](https://travis-ci.org/matthieubulte/bash.js)[![Code Climate](https://codeclimate.com/github/matthieubulte/bash.js/badges/gpa.svg)](https://codeclimate.com/github/matthieubulte/bash.js)
 =======
 
 This piece of javascript code is an attempt to create a hybrid javascript and bash-like code runner. This runner was written to integrate with the mongoshell and provide more powerful command line query mechanisms.
