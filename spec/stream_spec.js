@@ -18,6 +18,22 @@ describe('Stream', function() {
             expect(third).toEqual(3);
         });
     });
-    
-    
+
+    describe('hasNext()', function() {
+        it("returns false when there's no next element", function() {
+             var stream = new Stream([1]);
+
+             stream.next();
+
+             expect(stream.hasNext()).toBe(false);
+        });
+
+        it("returns true when there's a next element", function() {
+             var stream = new Stream([1, 2]);
+
+             stream.next();
+
+             expect(stream.hasNext()).toBe(true);
+        });
+    });
 });
