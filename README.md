@@ -32,7 +32,7 @@ returns the input parameter (here a simple string)
 ##### Pipes
 ```
 > square 2 | _ + 2
-4
+6
 ```
 
 it now gets interesting with the use of the pipe operator.
